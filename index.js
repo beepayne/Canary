@@ -5,13 +5,18 @@
 // Loading MQTT module 
 var mqtt = require('mqtt');
 // Connecting to MQTT broker server - mosquitto
-var client = mqtt.connect('mqtt://infiniteattempts.summerstudio.xyz');
+var options = {
+    host: 'infiniteattempts.summerstudio.xyz',
+    port: 5269,
+    clientId: 'avis'
+}
+var client = mqtt.connect(options);
 
 // Loading assert module - Error Checking
 const assert = require('assert');
 
 // Loading moment module - To get time stamp
-var moment = require('moment');
+// var moment = require('moment');
 
 // Loading MongodB Client module
 var MongoClient = require('mongodb').MongoClient;
@@ -72,6 +77,9 @@ MongoClient.connect(MongoDB_url, {useNewUrlParser: true}, function(error, initia
 			case ("Canary/Ibis"):
 				buildPacket(parameterCount, parameters, Ibis_collection);
 				break;
+			case ("Canary/AirMon"):
+				console.log(parameters);
+				break;
 		}
 		
 		// Chair monitor publishing to defive to tell it to sleep
@@ -102,9 +110,11 @@ MongoClient.connect(MongoDB_url, {useNewUrlParser: true}, function(error, initia
 
 // When connected subscribe to desired topic. Currently to Canary/+
 client.on('connect', function () {
+
+	console.log("Connected to the MQTT Broker");
 	client.subscribe('Canary/+', function (error) {	
 	
-		if (!error)
+	if (!error)
 		console.log("Subscribed to Canary/+ Topic ");
 	else
 		console.log("Cannot subscribe, server won't allow");
