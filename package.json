@@ -1,6 +1,6 @@
 {
   "name": "avis",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Designed to put in the back end coding for our teams node.js",
   "main": "index.js",
   "scripts": {
