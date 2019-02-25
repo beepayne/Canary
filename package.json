@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/beepayne/Canary/issues"
   },
-  "homepage": "https://github.com/beepayne/Canary#readme"
+  "homepage": "https://github.com/beepayne/Canary#readme",
+  "dependencies": {
+    "mqtt": "^2.18.8"
+  }
 }
