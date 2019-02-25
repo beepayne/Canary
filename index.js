@@ -4,10 +4,13 @@
 
 // Loading MQTT module 
 var mqtt = require('mqtt');
+
 // Connecting to MQTT broker server - mosquitto
 var options = {
     host: 'infiniteattempts.summerstudio.xyz',
-    port: 5269,
+	port: 5269,
+	// username: 'lol_no',
+    // password: 'lol_no',
     clientId: 'avis'
 }
 var MQTTclient = mqtt.connect(options);
