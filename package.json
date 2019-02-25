@@ -1,6 +1,6 @@
 {
   "name": "avis",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Designed to put in the back end coding for our teams node.js",
   "main": "index.js",
   "scripts": {
@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/beepayne/Canary/issues"
   },
-  "homepage": "https://github.com/beepayne/Canary#readme"
+  "homepage": "https://github.com/beepayne/Canary#readme",
+  "dependencies": {
+    "mongodb": "^3.1.13",
+    "mqtt": "^2.18.8"
+  }
 }
